@@ -1,0 +1,2 @@
+Pon aquí los 8 CSV del dataset de Olist (Kaggle), con su nombre original.
+Put the 8 Olist CSV files (Kaggle) here, keeping their original names.

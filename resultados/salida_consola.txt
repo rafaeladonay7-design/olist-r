@@ -1,0 +1,85 @@
+Registros cargados:
+              orders          order_items             payments 
+               99441               112650               103886 
+             reviews            customers             products 
+               99224                99441                32951 
+             sellers category_translation 
+                3095                   71 
+
+Reglas revisadas: 32 | con problemas: 15 
+
+     categoria                                                  regla
+1     Unicidad                   review_id repetido en varios pedidos
+2  Completitud                                 Producto sin categoría
+3       Cuadre         Lo pagado no cuadra con precio + envío (> R$1)
+4       Fechas              Entregado a paquetería antes de la compra
+5       Fechas     Entregado al cliente antes de salir con paquetería
+6  Completitud                         Pedido sin fecha de aprobación
+7  Completitud                     Categoría sin traducción al inglés
+8       Rangos                                Pago en cero o negativo
+9   Integridad                      Pedido no cancelado sin productos
+10     Estatus               Estatus 'delivered' sin fecha de entrega
+11     Estatus       Pedido cancelado con fecha de entrega al cliente
+12      Rangos                                           Peso en cero
+13 Completitud                            Producto sin peso o medidas
+14      Rangos                                 Pago a 0 mensualidades
+15  Integridad                             Pedido sin pago registrado
+16    Unicidad                                     order_id duplicado
+17    Unicidad                                  customer_id duplicado
+18    Unicidad                                   product_id duplicado
+19    Unicidad                                    seller_id duplicado
+20    Unicidad Renglón de pedido duplicado (order_id + order_item_id)
+21    Unicidad         Pago duplicado (order_id + payment_sequential)
+22  Integridad                         Pedido con cliente inexistente
+23  Integridad                         Renglón con pedido inexistente
+24  Integridad                       Renglón con producto inexistente
+25  Integridad                       Renglón con vendedor inexistente
+26  Integridad                          Pago de un pedido inexistente
+27      Fechas                       Fecha de compra vacía o inválida
+28      Fechas                            Aprobado antes de la compra
+29      Fechas           Fecha estimada de entrega antes de la compra
+30      Fechas               Respuesta de reseña antes de su creación
+31      Rangos                              Precio en cero o negativo
+32      Rangos                            Calificación fuera de 1 a 5
+   registros_con_problema  pct severidad
+1                    1603 1.62     Media
+2                     610 1.85     Media
+3                     249 0.25     Media
+4                     166 0.17      Alta
+5                      23 0.02      Alta
+6                      19 0.02     Media
+7                      13 0.04      Baja
+8                       9 0.01     Media
+9                       8 0.01     Media
+10                      8 0.01      Alta
+11                      6 0.01     Media
+12                      4 0.01      Baja
+13                      2 0.01      Baja
+14                      2 0.00      Baja
+15                      1 0.00     Media
+16                      0 0.00      Alta
+17                      0 0.00      Alta
+18                      0 0.00      Alta
+19                      0 0.00      Alta
+20                      0 0.00      Alta
+21                      0 0.00      Alta
+22                      0 0.00      Alta
+23                      0 0.00      Alta
+24                      0 0.00      Alta
+25                      0 0.00      Alta
+26                      0 0.00      Alta
+27                      0 0.00      Alta
+28                      0 0.00      Alta
+29                      0 0.00      Alta
+30                      0 0.00      Baja
+31                      0 0.00      Alta
+32                      0 0.00      Alta
+
+Impacto en el indicador '% de entregas tarde':
+          version pedidos_entregados entregados_tarde pct_tarde
+1    Datos crudos              96478             7826      8.11
+2 Datos validados              96282             7823      8.13
+
+Pedidos con tiempo de paquetería negativo: 23 
+Ventas de productos sin categoría: R$179,535 (1.32% de las ventas)
+Reseñas por renglón: 99224 | por review_id único: 98410 

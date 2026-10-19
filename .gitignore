@@ -1,0 +1,5 @@
+.DS_Store
+.Rhistory
+.RData
+# Los CSV de Kaggle no se suben: descargarlos y ponerlos aquí
+datos/*.csv
