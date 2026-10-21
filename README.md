@@ -88,4 +88,3 @@ The **% of late deliveries is reliable**: it moves only 0.02 points. The problem
 ## Related projects
 
 - [olist-sql](https://github.com/rafaeladonay7-design/olist-sql): logistics diagnostic of the same database with SQL.
-- [Portfolio](https://rafaeladonay7-design.github.io)

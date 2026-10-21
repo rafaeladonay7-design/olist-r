@@ -88,4 +88,3 @@ El **% de entregas tarde es confiable**: cambia solo 0.02 puntos. Los problemas 
 ## Proyectos relacionados
 
 - [olist-sql](https://github.com/rafaeladonay7-design/olist-sql): diagnóstico logístico de la misma base con SQL.
-- [Portafolio](https://rafaeladonay7-design.github.io)
